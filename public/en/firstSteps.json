@@ -1,0 +1,33 @@
+{
+  "1": {
+    "element": ".cityInputForm",
+    "intro": "Use the searchbar to search for a City",
+    "position": "right",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlightClass"
+  },
+  "2": {
+    "element": "#menu",
+    "intro": "You can use this menu to change the language and timezones",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlightClass"
+  },
+  "3": {
+    "element": "#tabs",
+    "intro": "Use these tabs to navigate through the 3 day weather forecast",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlightClass"
+  },
+  "4": {
+    "element": "#addToFavourites",
+    "intro": "Click here to add a city to your favourites",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlighClass"
+  },
+  "5": {
+    "element": "#favouritesStar",
+    "intro": "Click here to view your favourited cities",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighLightClass"
+  }
+}

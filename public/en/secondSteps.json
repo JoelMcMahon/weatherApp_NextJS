@@ -1,0 +1,14 @@
+{
+  "1": {
+    "element": ".hourly_forecast",
+    "intro": "You can use this carousel to navigate through the hourly forecast",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlightClass"
+  },
+  "2": {
+    "element": ".detailed_view",
+    "intro": "Click here to see a detailed hourly forecast",
+    "tooltipClass": "toolTip",
+    "highlightClass": "myHighlightClass"
+  }
+}
