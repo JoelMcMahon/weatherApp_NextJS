@@ -31,12 +31,12 @@ const HourlyForecast: React.FC<IProps> = ({ value }) => {
   const { locale } = useLanguageContext();
 
   let cityForecast = city.forecast[parseInt(value)];
-  let currentDate = new Date();
-  let time = currentDate.getHours();
-  const { enabled, setEnabled, onExit, activeSteps, setActiveSteps } =
-    useToolTipContext();
+
+  const { activeSteps, setActiveSteps, setRun } = useToolTipContext();
 
   useEffect(() => {
+    let currentDate = new Date();
+    let time = currentDate.getHours();
     let slideArray: number[] = [];
     let slideNumber: number;
     const mediaQueryCondition = window.matchMedia("(min-width: 900px)");
@@ -72,17 +72,20 @@ const HourlyForecast: React.FC<IProps> = ({ value }) => {
     setSlides(nextSlide(slides, -1));
   };
 
-  const handleActiveSecondSteps = () => {
-    getSteps("tutorial/en/secondSteps.json").then((response) => {
-      setActiveSteps(Object.values(response));
-    });
-    setEnabled(true);
+  const handleSecondTutorialClick = () => {
+    getSteps("tutorial/en/steps2.json")
+      .then((response) => {
+        setActiveSteps(Object.values(response));
+      })
+      .then(() => {
+        setRun(true);
+      });
   };
 
   return (
     <ThemeProvider theme={theme}>
       <HelpOutlineIcon
-        onClick={handleActiveSecondSteps}
+        onClick={handleSecondTutorialClick}
         sx={{ color: "white", fontSize: "2rem" }}
       ></HelpOutlineIcon>
       <Box

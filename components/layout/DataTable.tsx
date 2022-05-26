@@ -8,10 +8,10 @@ import { FormattedMessage, useIntl } from "react-intl";
 import LanguageSelector from "../LanguageSelector";
 import { useLanguageContext } from "../../context/LanguageContextProvider";
 import { useToolTipContext } from "../../context/ToolTipContextProvider";
-import { Steps } from "intro.js-react";
 import Star from "@mui/icons-material/Star";
 import Tutorial from "../Tutorial";
 import FavouritesList from "../FavouritesList";
+import { useFavouritesContext } from "../../context/FavouritesContextProvider";
 
 const DataTable = () => {
   const [formInput, setformInput] = useState<string>("");
@@ -19,12 +19,12 @@ const DataTable = () => {
   const [isFocus, setIsFocus] = useState<boolean>(false);
   const [isBlur, setIsBlur] = useState<boolean>(false);
   const [geolocation, setGeolocation] = useState<string>("");
-  const [showFavourites, setshowFavourites] = useState<boolean>(false);
 
   const { city, setCity } = useCityContext();
   const { locale } = useLanguageContext();
-  const { enabled, setEnabled, onExit, activeSteps, setActiveSteps } =
-    useToolTipContext();
+  const { activeSteps, setActiveSteps } = useToolTipContext();
+  const { favourites, showFavourites, setShowFavourites } =
+    useFavouritesContext();
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setformInput(e.target.value);
@@ -114,17 +114,17 @@ const DataTable = () => {
       marginBottom: "0.5rem",
       fontSize: "2rem",
     },
+
+    fontFamily: "Roboto",
   };
 
   const intl = useIntl();
 
   const elementRef: any = useRef();
 
-  const viewWidth = window.innerWidth >= 900 ? true : false;
-
   return (
     <div>
-      <Steps
+      {/* <Steps
         enabled={enabled}
         steps={activeSteps}
         initialStep={0}
@@ -144,8 +144,7 @@ const DataTable = () => {
           showBullets: true,
           disableInteraction: false,
         }}
-      />
-
+      /> */}
       <Box
         sx={{
           display: "flex",
@@ -208,13 +207,12 @@ const DataTable = () => {
             <Tutorial />
             <Star
               sx={{ color: "gold", marginLeft: 3, fontSize: "2rem" }}
-              onClick={() => setshowFavourites(!showFavourites)}
+              onClick={() => setShowFavourites(!showFavourites)}
               id="favouritesStar"
             />
           </Box>
         </Box>
       </Box>
-
       <Box className="error_message">
         {!isInputValid && isBlur && (
           <p>
@@ -225,8 +223,8 @@ const DataTable = () => {
           </p>
         )}
       </Box>
-      <CityTabs showFavourites={showFavourites}></CityTabs>
-      {showFavourites && <FavouritesList />}
+      {/* <CityTabs showFavourites={showFavourites}></CityTabs>
+      {showFavourites && <FavouritesList />} */}
     </div>
   );
 };

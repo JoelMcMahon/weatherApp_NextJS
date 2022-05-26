@@ -211,3 +211,69 @@ ul {
 #addToFavourites {
   display: inline-flex;
 }
+
+#toolTip {
+  height: 280px;
+  max-width: 65vw;
+  width: 400px;
+  max-height: 65vh;
+  padding: 15px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #99cc00;
+  border-radius: 15px;
+  text-align: center;
+  font-family: "Gudea", sans-serif;
+  position: relative;
+  color: white;
+  font-size: 1.3rem;
+  z-index: 102;
+}
+
+#toolTipBody {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+#toolTipButtonContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+#close {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+
+.toolTipButton {
+  background-color: #3366ff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  color: white;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.toolTipButton:hover {
+  background-color: #6a8fff;
+}
+
+#overlay {
+  height: 850px;
+  width: 100vw;
+  background-color: #1f9a1869;
+  position: absolute;
+  z-index: 1;
+}

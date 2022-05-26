@@ -4,8 +4,6 @@ import { useFavouritesContext } from "../context/FavouritesContextProvider";
 const FavouritesList: React.FC = () => {
   const { favourites } = useFavouritesContext();
 
-  console.log(favourites);
-
   return (
     <>
       {favourites.map((favourite) => {

@@ -1,0 +1,28 @@
+{
+  "1": {
+    "title": "Welcome to Weather App",
+    "target": ".cityInputForm",
+    "content": "Use the searchbar to search for a City or Location",
+    "disableBeacon": "true"
+  },
+  "2": {
+    "target": "#menu",
+    "content": "You can use this menu to change the language and timezones",
+    "disableBeacon": "true"
+  },
+  "3": {
+    "target": "#tabs",
+    "content": "Use these tabs to navigate through the 3 day weather forecast",
+    "disableBeacon": "true"
+  },
+  "4": {
+    "target": "#addToFavourites",
+    "content": "Click here to add a city to your favourites",
+    "disableBeacon": "true"
+  },
+  "5": {
+    "target": "#favouritesStar",
+    "content": "Click here to view your favourited cities",
+    "disableBeacon": "true"
+  }
+}

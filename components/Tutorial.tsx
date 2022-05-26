@@ -2,19 +2,24 @@ import { Button } from "@mui/material";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import { useToolTipContext } from "../context/ToolTipContextProvider";
-import { firstSteps } from "../tooltipSteps/tooltipSteps";
+import { getSteps } from "../services/services";
 
 const Tutorial = () => {
-  const { enabled, setEnabled, setActiveSteps } = useToolTipContext();
+  const { setActiveSteps, setRun } = useToolTipContext();
 
-  const toggleSteps = () => {
-    setActiveSteps(firstSteps);
-    setEnabled(!enabled);
+  const handleRelaunchTutorial = () => {
+    getSteps("tutorial/en/steps1.json")
+      .then((response) => {
+        setActiveSteps(Object.values(response));
+      })
+      .then(() => {
+        setRun(true);
+      });
   };
 
   return (
     <div>
-      <Button id="tutorialBtn" type="submit" onClick={toggleSteps}>
+      <Button id="tutorialBtn" type="submit" onClick={handleRelaunchTutorial}>
         <FormattedMessage id="tutorial" defaultMessage="Tutorial" />
       </Button>
     </div>

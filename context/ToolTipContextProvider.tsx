@@ -4,12 +4,11 @@ import {
   IToolTipContextProver,
   step,
 } from "../interfaces/interfaces";
-import { getForecast, getSteps } from "../services/services";
+import { getSteps } from "../services/services";
 
 const toolTipContext = createContext<IToolTipContext>({
-  enabled: true,
-  setEnabled: () => {},
-  onExit: () => {},
+  run: true,
+  setRun: () => {},
   activeSteps: [],
   setActiveSteps: () => {},
 });
@@ -19,7 +18,7 @@ export const useToolTipContext = () => useContext(toolTipContext);
 const ToolTipContextProvider: React.FC<IToolTipContextProver> = ({
   children,
 }) => {
-  const [enabled, setEnabled] = useState(true);
+  const [run, setRun] = useState<boolean>(false);
   const [activeSteps, setActiveSteps] = useState<any>([
     {
       element: "#tutorialBtn",
@@ -32,20 +31,25 @@ const ToolTipContextProvider: React.FC<IToolTipContextProver> = ({
   ]);
 
   useEffect(() => {
-    getSteps("tutorial/en/firstSteps.json").then((response) => {
-      setActiveSteps(Object.values(response));
-    });
+    getSteps("tutorial/en/steps1.json")
+      .then((response) => {
+        setActiveSteps(Object.values(response));
+      })
+      .then(() => {
+        setRun(true);
+      });
   }, []);
 
   console.log(activeSteps);
 
-  const onExit = () => {
-    setEnabled(false);
-  };
-
   return (
     <toolTipContext.Provider
-      value={{ enabled, setEnabled, onExit, activeSteps, setActiveSteps }}
+      value={{
+        run,
+        setRun,
+        activeSteps,
+        setActiveSteps,
+      }}
     >
       {children}
     </toolTipContext.Provider>

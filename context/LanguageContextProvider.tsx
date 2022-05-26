@@ -20,8 +20,6 @@ let browserLocale: any;
 //   // }
 // }, []);
 
-console.log(browserLocale);
-
 let language: any;
 if (browserLocale === "en-GB" || "en-US") {
   language = English;

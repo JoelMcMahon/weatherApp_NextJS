@@ -14,7 +14,6 @@ const FavouritesStar: React.FC = () => {
 
   const handleAddToFavourites = () => {
     if (cityIsFavourited) {
-      console.log("in");
       let newFavourites = favourites.filter(
         (favourite) => favourite.name !== city.name
       );

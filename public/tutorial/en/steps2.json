@@ -1,0 +1,13 @@
+{
+  "1": {
+    "target": ".hourly_forecast",
+    "content": "You can use this carousel to navigate through the hourly forecast",
+    "disableBeacon": "true"
+  },
+
+  "2": {
+    "target": ".detailed_view",
+    "content": "Click here to see a detailed hourly forecast",
+    "disableBeacon": "true"
+  }
+}

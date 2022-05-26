@@ -16,19 +16,15 @@ export interface ICityContext {
 }
 
 export interface IToolTipContext {
-  enabled: boolean;
-  setEnabled: React.Dispatch<React.SetStateAction<boolean>>;
-  onExit: any;
+  run: boolean;
+  setRun: React.Dispatch<React.SetStateAction<boolean>>;
   activeSteps: step[];
   setActiveSteps: React.Dispatch<React.SetStateAction<step[]>>;
 }
 
 export type step = {
-  element: string;
-  intro: string;
-  position?: string;
-  tooltipClass: string;
-  highlightClass: string;
+  target: string;
+  content: string;
 };
 
 export interface IStepsContext {
@@ -39,6 +35,8 @@ export interface IStepsContext {
 export interface IFavouritesContext {
   favourites: ICity["cities"];
   setFavourites: React.Dispatch<React.SetStateAction<ICity["cities"]>>;
+  showFavourites: boolean;
+  setShowFavourites: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface ILangaugeContext {

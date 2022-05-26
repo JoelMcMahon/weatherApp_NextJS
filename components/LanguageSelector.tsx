@@ -13,6 +13,7 @@ const LanguageSelector: React.FC = () => {
         display: "flex",
         flexDirection: "row",
         marginRight: { xs: "0rem", lg: "1rem" },
+        fontFamily: "Roboto",
       }}
     >
       <label htmlFor="languageSelector" id="language">
