@@ -5,6 +5,7 @@ import DataTable from "./DataTable";
 const JoyrideNoSSR = dynamic(() => import("react-joyride"), { ssr: false });
 import { TooltipRenderProps } from "react-joyride";
 import { useToolTipContext } from "../../context/ToolTipContextProvider";
+import CloseIcon from "@mui/icons-material/Close";
 
 type ComponentProps = {
   children: ReactNode;
@@ -27,10 +28,10 @@ const Layout: NextPage<ComponentProps> = ({ children }) => {
   }) => (
     <div id="toolTip" {...tooltipProps}>
       <div id="close" {...skipProps}>
-        x
+        <CloseIcon></CloseIcon>
       </div>
       <div id="toolTipBody">
-        {step.title && <h3>{step.title}</h3>}
+        <div id="toolTipTitle">{step.title && <h3>{step.title}</h3>}</div>
         <div id="toolTipContent">{step.content}</div>
       </div>
       <div id="toolTipButtonContainer">
@@ -63,8 +64,6 @@ const Layout: NextPage<ComponentProps> = ({ children }) => {
     }
   };
 
-  console.log(run);
-
   return (
     <>
       <JoyrideNoSSR
@@ -79,7 +78,7 @@ const Layout: NextPage<ComponentProps> = ({ children }) => {
         run={run}
         styles={{
           options: {
-            arrowColor: "#99CC00",
+            arrowColor: "#064663",
           },
         }}
         steps={activeSteps}

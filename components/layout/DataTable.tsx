@@ -123,7 +123,7 @@ const DataTable = () => {
   const elementRef: any = useRef();
 
   return (
-    <div>
+    <div id="dataTable">
       {/* <Steps
         enabled={enabled}
         steps={activeSteps}
@@ -223,8 +223,6 @@ const DataTable = () => {
           </p>
         )}
       </Box>
-      {/* <CityTabs showFavourites={showFavourites}></CityTabs>
-      {showFavourites && <FavouritesList />} */}
     </div>
   );
 };

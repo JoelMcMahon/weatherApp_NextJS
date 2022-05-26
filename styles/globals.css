@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap");
-/* @import "~intro.js/themes/introjs-dark.css"; */
 
 * {
   margin: 0;
@@ -24,21 +23,9 @@
 }
 
 body {
-  background-color: rgb(4, 51, 73);
-  /* background: linear-gradient(
-    0deg,
-    rgba(4, 51, 73, 1) 0%,
-    rgba(5, 65, 92, 1) 100%
-  ); */
+  background-color: #043349;
 }
 
-.main_container {
-  padding: 1rem;
-  height: 90vh;
-  /* width: 82%; */
-  display: flex;
-  border-radius: 3px;
-}
 @media screen and (max-width: 900px) {
   .cityInputForm {
     /* margin: auto; */
@@ -62,6 +49,10 @@ body {
     flex-direction: row;
     height: 3rem;
   }
+}
+
+#dataTable {
+  margin-top: 1rem;
 }
 
 #city_input {
@@ -145,50 +136,6 @@ ul {
   margin: 1rem 0rem;
 }
 
-.introjs-tooltip {
-  color: #fff;
-}
-
-.introjs-tooltip-header {
-  /* background-color: #064663; */
-  background-color: #043349;
-}
-
-.introjs-tooltiptext {
-  /* background-color: rgba(0, 0, 0); */
-  background-color: #064663;
-  color: white;
-  opacity: 0.8;
-}
-
-.introjs-bullets {
-  /* background-color: rgba(0, 0, 0); */
-  background-color: #064663;
-
-  opacity: 0.8;
-}
-
-.introjs-tooltipbuttons {
-  /* background-color: #064663; */
-  background-color: #043349;
-}
-
-.introjs-button.introjs-nextbutton {
-  border-radius: 1rem;
-  /* background-color: black; */
-  color: #1976d2;
-  text-shadow: none;
-  border: 2px solid #1976d2;
-}
-
-.introjs-button.introjs-prevbutton {
-  border-radius: 1rem;
-  /* background-color: black; */
-  color: #1976d2;
-  text-shadow: none;
-  border: 2px solid #1976d2;
-}
-
 .favouriteCityPanel {
   display: flex;
   flex-direction: row;
@@ -213,30 +160,66 @@ ul {
 }
 
 #toolTip {
-  height: 280px;
+  height: 300px;
   max-width: 65vw;
-  width: 400px;
+  width: 425px;
   max-height: 65vh;
   padding: 15px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #99cc00;
   border-radius: 15px;
+  border: none;
   text-align: center;
   font-family: "Gudea", sans-serif;
   position: relative;
   color: white;
-  font-size: 1.3rem;
   z-index: 102;
+
+  background: hsla(199, 90%, 15%, 1);
+
+  background: linear-gradient(
+    135deg,
+    hsla(199, 90%, 15%, 1) 0%,
+    hsla(199, 89%, 21%, 1) 56%,
+    hsla(199, 89%, 21%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    135deg,
+    hsla(199, 90%, 15%, 1) 0%,
+    hsla(199, 89%, 21%, 1) 56%,
+    hsla(199, 89%, 21%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    135deg,
+    hsla(199, 90%, 15%, 1) 0%,
+    hsla(199, 89%, 21%, 1) 56%,
+    hsla(199, 89%, 21%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#043349", endColorstr="#064663", GradientType=1 );
 }
 
 #toolTipBody {
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+}
+
+#toolTipTitle {
+  white-space: nowrap;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+#toolTipContent {
+  font-size: 1.4rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #toolTipButtonContainer {
@@ -246,28 +229,28 @@ ul {
   justify-content: space-around;
   align-items: center;
   margin-top: auto;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 #close {
   position: absolute;
-  right: 15px;
-  top: 5px;
+  right: 10px;
+  top: 10px;
 }
 
 .toolTipButton {
-  background-color: #3366ff;
+  background-color: #041c329c;
   border: none;
   border-radius: 10px;
-  padding: 8px 16px;
+  padding: 10px 18px;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   white-space: nowrap;
   cursor: pointer;
 }
 
 .toolTipButton:hover {
-  background-color: #6a8fff;
+  background-color: #1452909c;
 }
 
 #overlay {
