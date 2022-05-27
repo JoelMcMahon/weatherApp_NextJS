@@ -31,7 +31,11 @@ const Layout: NextPage<ComponentProps> = ({ children }) => {
         <CloseIcon></CloseIcon>
       </div>
       <div id="toolTipBody">
-        <div id="toolTipTitle">{step.title && <h3>{step.title}</h3>}</div>
+        {step.title && (
+          <div id="toolTipTitle">
+            <h3>{step.title}</h3>
+          </div>
+        )}
         <div id="toolTipContent">{step.content}</div>
       </div>
       <div id="toolTipButtonContainer">
@@ -79,6 +83,7 @@ const Layout: NextPage<ComponentProps> = ({ children }) => {
         styles={{
           options: {
             arrowColor: "#064663",
+            overlayColor: "rgba(0, 0, 0, 0.7)",
           },
         }}
         steps={activeSteps}

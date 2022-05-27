@@ -40,12 +40,17 @@ const FavouritesStar: React.FC = () => {
       {cityIsFavourited ? (
         <Star
           onClick={handleAddToFavourites}
-          sx={{ color: "gold", fontSize: "2rem", marginLeft: "1rem" }}
+          sx={{
+            color: "gold",
+            fontSize: "2rem",
+            marginLeft: "1rem",
+            cursor: "pointer",
+          }}
         />
       ) : (
         <StarBorderIcon
           onClick={handleAddToFavourites}
-          sx={{ fontSize: "2rem", marginLeft: "1rem" }}
+          sx={{ fontSize: "2rem", marginLeft: "1rem", cursor: "pointer" }}
         />
       )}
     </div>

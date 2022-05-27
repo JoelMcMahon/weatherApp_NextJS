@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: none;
+  padding: none;
   box-sizing: border-box;
 }
 
@@ -144,11 +144,13 @@ ul {
   color: white;
   background-color: #064663;
   min-width: 68vw;
-  width: 100%;
+  width: 80%;
+  margin: auto;
   /* border: 1px solid white; */
   border-radius: 2.5px;
   margin-bottom: 1rem;
   padding: 1rem;
+  /* font-family: "Gudea"; */
 }
 
 .favouriteCityPanel__conditionIcon {
@@ -169,10 +171,11 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 5px;
   border: none;
   text-align: center;
   font-family: "Gudea", sans-serif;
+  font-size: 1.4rem;
   position: relative;
   color: white;
   z-index: 102;
@@ -203,6 +206,18 @@ ul {
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#043349", endColorstr="#064663", GradientType=1 );
 }
 
+@media screen and (max-width: 650px) {
+  #toolTip {
+    width: 65vw;
+    height: 35vh;
+    font-size: 1rem;
+  }
+  .toolTipButton {
+    font-size: 0rem;
+    background-color: red;
+  }
+}
+
 #toolTipBody {
   display: flex;
   flex-direction: column;
@@ -212,12 +227,12 @@ ul {
 
 #toolTipTitle {
   white-space: nowrap;
-  font-size: 1.5rem;
-  margin-top: 20px;
+  /* font-size: 1.5rem; */
+  /* margin-top: 20px; */
 }
 
 #toolTipContent {
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -234,6 +249,7 @@ ul {
 
 #close {
   position: absolute;
+  cursor: pointer;
   right: 10px;
   top: 10px;
 }

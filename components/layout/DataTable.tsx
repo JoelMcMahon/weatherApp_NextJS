@@ -124,27 +124,6 @@ const DataTable = () => {
 
   return (
     <div id="dataTable">
-      {/* <Steps
-        enabled={enabled}
-        steps={activeSteps}
-        initialStep={0}
-        onExit={onExit}
-        ref={elementRef}
-        onBeforeChange={(nextStepIndex) => {
-          if (nextStepIndex === 2) {
-            elementRef.current.updateStepElement(nextStepIndex);
-          } else if (nextStepIndex === 3) {
-            console.log("in");
-            elementRef.current.updateStepElement(nextStepIndex);
-          }
-        }}
-        options={{
-          overlayOpacity: 0.5,
-          showProgress: false,
-          showBullets: true,
-          disableInteraction: false,
-        }}
-      /> */}
       <Box
         sx={{
           display: "flex",
@@ -206,7 +185,12 @@ const DataTable = () => {
           >
             <Tutorial />
             <Star
-              sx={{ color: "gold", marginLeft: 3, fontSize: "2rem" }}
+              sx={{
+                color: "gold",
+                marginLeft: 3,
+                fontSize: "2rem",
+                cursor: "pointer",
+              }}
               onClick={() => setShowFavourites(!showFavourites)}
               id="favouritesStar"
             />

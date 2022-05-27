@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import React from "react";
 import { useFavouritesContext } from "../context/FavouritesContextProvider";
 
@@ -8,15 +9,23 @@ const FavouritesList: React.FC = () => {
     <>
       {favourites.map((favourite) => {
         return (
-          <div key={favourite.name} className="favouriteCityPanel">
-            <h4>{favourite.name}</h4>
-            <p>{favourite.forecast[0].day.avgtemp_c}</p>
-            <img
-              src={favourite.forecast[0].day.condition.icon}
-              className="favouriteCityPanel__conditionIcon"
-            ></img>
-            <p>{favourite.forecast[0].day.condition.text}</p>
-          </div>
+          <>
+            <Box
+              key={favourite.name}
+              className="favouriteCityPanel"
+              sx={{
+                fontFamily: "Roboto",
+              }}
+            >
+              <h4>{favourite.name}</h4>
+              <p>{favourite.forecast[0].day.avgtemp_c}</p>
+              <img
+                src={favourite.forecast[0].day.condition.icon}
+                className="favouriteCityPanel__conditionIcon"
+              ></img>
+              <p>{favourite.forecast[0].day.condition.text}</p>
+            </Box>
+          </>
         );
       })}
     </>
